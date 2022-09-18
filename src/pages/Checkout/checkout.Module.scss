@@ -1,0 +1,13 @@
+.checkout {
+	max-width: 1160px;
+	padding: 0 10px;
+	margin: 0px auto;
+	&__title {
+		font-size: 30px;
+		font-weight: 700;
+		line-height: 1.2;
+		letter-spacing: 0em;
+		text-align: left;
+		margin-bottom: 41px;
+	}
+}

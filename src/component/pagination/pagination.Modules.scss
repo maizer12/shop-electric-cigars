@@ -1,0 +1,25 @@
+.pagination {
+	background-color: rgb(0, 0, 0);
+	width: 100%;
+	&__items {
+		display: flex;
+		justify-content: space-between;
+		position: relative;
+		z-index: 3;
+	}
+	&__link {
+		font-size: 18px;
+		font-weight: 700;
+		line-height: 1.2;
+		color: aliceblue;
+		padding: 28px;
+		display: inline-block;
+		
+		&:hover {
+			color: #ffd900;
+		}
+	}
+	.active{
+		background-color: #DF3616;
+	}
+}

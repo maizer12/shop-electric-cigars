@@ -1,26 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
+import React from 'react'
+import Footer from './component/footer'
+import Header from './component/header'
+import Navigation from './component/navigation'
+import Pagination from './component/pagination'
+import Bue from './pages/Bue'
+import Home from './pages/Home'
+import './style/null.scss'
+import {Route, Routes} from 'react-router-dom'
+import Basket from './pages/Basket'
+import Catalog from './pages/Сatalog'
+import Checkout from './pages/Checkout'
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<main className='main'>
+			<Header />
+			<Navigation />
+			<Pagination />
+			{
+				<Routes>
+					<Route path='/' element={<Home />} />
+					<Route path='/bue' element={<Bue />} />
+					<Route path='/basket' element={<Basket />} />
+					<Route path='/catalog' element={<Catalog />} />
+					<Route path='/checkout' element={<Checkout />} />
+				</Routes>
+			}
+			<Footer />
+		</main>
+	)
 }
 
-export default App;
+export default App

@@ -1,0 +1,30 @@
+.search {
+	position: relative;
+	display: flex;
+	align-items: center;
+	&__input {
+		border: 1px solid rgba(black, 0.4);
+		padding: 10px;
+		width: 400px;
+		&::placeholder{
+			transition: 0.7s;
+		}
+		&:focus{
+			&::placeholder{
+				transform: translateY(-500px);
+			}
+		}
+	}
+	&__btn {
+		position: absolute;
+		background: none;
+		right: 10px;
+		&:hover {
+			svg {
+				path{
+					fill: rgb(134, 5, 160);
+				}
+			}
+		}
+	}
+}
