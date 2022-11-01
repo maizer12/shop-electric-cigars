@@ -1,10 +1,15 @@
 .cart {
-	max-width: 245px;
+	max-width: 255px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    z-index: 4;
+    position: relative;
 	cursor: pointer;
 	transition: 0.7s;
 	&__img {
 		position: relative;
 		overflow: hidden;
+        object-fit: cover;
 	}
 	&__type {
 		position: absolute;
@@ -90,13 +95,13 @@
 }
 .cart-bottom {
 	opacity: 0;
-	padding: 0 20px;
+	left: 20px;
 	overflow-y: visible;
 	bottom: 25px;
-	left: 0;
 	width: 100%;
+    max-width: 255px;
 	z-index: 20;
-	display: flex;
+	display: none;
 	justify-content: space-between;
 	align-items: center;
 	position: absolute;
@@ -111,13 +116,13 @@
 }
 .active-cart {
 	background-color: #fff;
-	max-width: 295px;
-	width: 120%;
-	transform: translateX(-20%);
-	padding: 20px;
+    z-index: 10;
+	min-width: 295px;
+    width: 100%;
+	padding: 18px;
 	box-shadow: 0 0 10px 0 black;
 	padding-bottom: 90px;
-	bottom: 10px;
-	margin-top: 5px;
-	margin-bottom: 5px;
+    .cart-bottom {
+        display: flex;
+    }
 }

@@ -1,46 +1,33 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Cart from '../../cart'
 import PaginationCards from '../../pagination/paginationCards'
 import './cartItemsCatalog.Module.scss'
+import ICart from '../../../model/ICart'
 
-interface IItem {
-	image: string
-	name: string
-	price: number
-	sale: number
-	type: string
-}
 interface IProps {
-	items: IItem[]
+	items: ICart[],
+    rowActivity: boolean,
+    sumCarts:string
 }
 
-const CartItemsCatalog = ({ items }: IProps) => {
+const CartItemsCatalog = ({ items, rowActivity, sumCarts }: IProps) => {
+    const cartsDB = items.sort((a, b) => a.price )
 	const sumCart:number = items.length
-	const workPagination = (a:number) => {
-		if(a === 0){
-			return 12
-		}else if (a === 1){
-			return a
-		}
-	}
-	console.log(workPagination(1))
+    const [sumPagination, setSumPagination] = useState<number>(0)
 	return (
 		<section className='carts-catalog'>
-			<div className='carts-catalog__item'>
-				{items.map((e, i) => (
+			<div style={{gridTemplateColumns: rowActivity? '1fr 1fr 1fr': '1fr'}} className='carts-catalog__item'>
+				{cartsDB.map((e, i) => (
+                    i <= Number(sumCarts)&& i > sumPagination?
 					<Cart
 						key={i}
 						indx={i}
 						open={55}
-						type={e.type}
-						name={e.name}
-						image={e.image}
-						price={e.price}
-						sale={e.sale}
-					/>
+                        cartElement={e}
+					/>:''
 				))}
 			</div>
-			<PaginationCards sumCart={sumCart} />
+			<PaginationCards setSumPagination={setSumPagination} sumElementNow={Number(sumCarts)} sumCart={sumCart} />
 		</section>
 	)
 }

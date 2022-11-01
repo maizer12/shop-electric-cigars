@@ -1,11 +1,17 @@
-import React from 'react';
-
-const ListHeader = () => {
+import React, { useState } from 'react';
+import './listHeader.Module.scss'
+type IProps = {
+    setRowColumn: React.Dispatch<React.SetStateAction<boolean>>,
+    rowCheck: boolean,
+    setSumCarts: React.Dispatch<React.SetStateAction<string>>
+}
+const ListHeader = ({setRowColumn, rowCheck, setSumCarts}:IProps) => {
 	return (
 			<div className='list-header'>
 				<div className='list-header__buttons'>
-					<button className='list-header__btn'>
+					<button onClick={()=> setRowColumn(true)} className='list-header__btn'>
 						<svg
+                            style={{opacity: rowCheck? '1': '0.7'}}
 							width='24'
 							height='24'
 							viewBox='0 0 24 24'
@@ -18,26 +24,27 @@ const ListHeader = () => {
 							/>
 						</svg>
 					</button>
-					<button className='list-header__btn'>
+					<button  onClick={()=> setRowColumn(false)} className='list-header__btn'>
 						<svg
+                            style={{opacity: rowCheck? '0.7': '1'}}
 							width='24'
 							height='24'
 							viewBox='0 0 24 24'
-							fill='none'
+							fill='black'
 							xmlns='http://www.w3.org/2000/svg'
 						>
 							<path
 								d='M6 11H18C18.7956 11 19.5587 10.6839 20.1213 10.1213C20.6839 9.55871 21 8.79565 21 8V6C21 5.20435 20.6839 4.44129 20.1213 3.87868C19.5587 3.31607 18.7956 3 18 3H6C5.20435 3 4.44129 3.31607 3.87868 3.87868C3.31607 4.44129 3 5.20435 3 6V8C3 8.79565 3.31607 9.55871 3.87868 10.1213C4.44129 10.6839 5.20435 11 6 11ZM5 8V6C5 5.73478 5.10536 5.48043 5.29289 5.29289C5.48043 5.10536 5.73478 5 6 5H18C18.2652 5 18.5196 5.10536 18.7071 5.29289C18.8946 5.48043 19 5.73478 19 6V8C19 8.26522 18.8946 8.51957 18.7071 8.70711C18.5196 8.89464 18.2652 9 18 9H6C5.73478 9 5.48043 8.89464 5.29289 8.70711C5.10536 8.51957 5 8.26522 5 8ZM18 13H6C5.20435 13 4.44129 13.3161 3.87868 13.8787C3.31607 14.4413 3 15.2044 3 16V18C3 18.7956 3.31607 19.5587 3.87868 20.1213C4.44129 20.6839 5.20435 21 6 21H18C18.7956 21 19.5587 20.6839 20.1213 20.1213C20.6839 19.5587 21 18.7956 21 18V16C21 15.2044 20.6839 14.4413 20.1213 13.8787C19.5587 13.3161 18.7956 13 18 13ZM19 18C19 18.2652 18.8946 18.5196 18.7071 18.7071C18.5196 18.8946 18.2652 19 18 19H6C5.73478 19 5.48043 18.8946 5.29289 18.7071C5.10536 18.5196 5 18.2652 5 18V16C5 15.7348 5.10536 15.4804 5.29289 15.2929C5.48043 15.1054 5.73478 15 6 15H18C18.2652 15 18.5196 15.1054 18.7071 15.2929C18.8946 15.4804 19 15.7348 19 16V18Z'
-								fill='#D0D0D0'
+								fill='black'
 							/>
 						</svg>
 					</button>
 				</div>
 				<div className='list-header__options'>
-					<select className='list-header__option'>
+					<select onChange={(e)=> setSumCarts(e.target.value)} className='list-header__option'>
+                        <option value='25'>25</option>
 						<option value='10'>10</option>
 						<option value='15'>15</option>
-						<option value='25'>25</option>
 					</select>
 					<select className='list-header__option'>
 						<option value='10'>Сортувати</option>

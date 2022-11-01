@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-
+import { AppSelector } from '../../../redux/hook'
 const NavigationButtons = () => {
+    const BasketItemsDB = AppSelector(state => state.cartSlice.BasketDBState)
 	const [activePagination, setActivePagination] = useState<number>(100)
 	type IButton = {
 		url: string
@@ -24,6 +25,7 @@ const NavigationButtons = () => {
 					}`}
 				>
 					<div className='navigation-buttons__icon'>
+                        {i === 0 || i === 2? <span className='navigation-buttons__sum'>{i === 2? BasketItemsDB.length: 0}</span>:''}
 						<img src={e.url} alt='btn-icon' />
 					</div>
 					<p className='navigation-buttons__desc'>{e.text}</p>

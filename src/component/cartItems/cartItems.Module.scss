@@ -1,9 +1,9 @@
 .cart-items {
-	padding: 70px 0;
+	padding: 70px 0 0;
 }
 .items-cart {
 	position: relative;
-	width: 1230px;
+	max-width: 1110px;
 	padding: 0 10px;
 	margin: 0px auto;
 	&__header {
@@ -11,6 +11,7 @@
 		justify-content: space-between;
 		margin-bottom: 47px;
 		align-items: center;
+        
 	}
 	&__control{
 		padding-right: 160px;
@@ -32,7 +33,6 @@
 	&__items{
 		padding: 0 10px;
 		margin: 0 auto;
-		width: 1220px;
 		display: flex;
 		position: relative;
 	}

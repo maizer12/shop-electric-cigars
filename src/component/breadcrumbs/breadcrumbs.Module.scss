@@ -1,6 +1,6 @@
 .breadcrumbs {
 	display: flex;
-	column-gap: 20px;
+	column-gap: 10px;
 	padding: 20px 0;
 	&__item {
 		font-size: 14px;
@@ -11,8 +11,24 @@
 		color: #747474;
 		font-weight: 500;
 		cursor: pointer;
+        position: relative;
+        padding-right: 15px;
+        &::after{
+            content:'';
+            border-radius: 50%;
+            width: 5px;
+            height: 5px;
+            background-color: #747474;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 0;
+            position: absolute;
+        }
 		&:last-child{
 			color: black;
+            &::after{
+                background: none;
+            }
 		}
 	}
 }

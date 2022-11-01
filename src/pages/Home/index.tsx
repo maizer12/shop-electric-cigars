@@ -2,152 +2,18 @@ import CartItems from '../../component/cartItems'
 import News from '../../component/news'
 import SliderHome from '../../component/slider'
 import './home.Module.scss'
-
-const itemNew = [
-	{
-		image: './img/cart/1.png',
-		name: 'Augvape Druga Squonker Kit model Q445',
-		price: 599,
-		sale: 799,
-		type: 'NEW',
-	},
-	{
-		image: './img/cart/2.png',
-		name: 'Augvape Druga Squonker Kit model Q445',
-		price: 499,
-		sale: 799,
-		type: 'Скидка',
-	},
-	{
-		image: './img/cart/3.png',
-		name: 'Augvape Druga Squonker Kit model Q445',
-		price: 699,
-		sale: 799,
-		type: 'HOT',
-	},
-	{
-		image: './img/cart/4.png',
-		name: 'Augvape Druga Squonker Kit model Q445',
-		price: 599,
-		sale: 799,
-		type: 'NEW',
-	},
-	{
-		image: './img/cart/1.png',
-		name: 'Augvape Druga Squonker Kit model Q445',
-		price: 599,
-		sale: 799,
-		type: 'Скидка',
-	},
-] 
-const itemPopular = [
-	{
-		image: './img/cart/1.png',
-		name: 'Augvape Druga Squonker Kit model Q445',
-		price: 299,
-		sale: 599,
-		type: 'HOT',
-	},
-	{
-		image: './img/cart/3.png',
-		name: 'Augvape Druga Squonker Kit model Q445',
-		price: 499,
-		sale: 699,
-		type: 'NEW',
-	},
-	{
-		image: './img/cart/1.png',
-		name: 'Augvape Druga Squonker Kit model Q445',
-		price: 399,
-		sale: 799,
-		type: 'Скидка',
-	},
-	{
-		image: './img/cart/2.png',
-		name: 'Augvape Druga Squonker Kit model Q445',
-		price: 299,
-		sale: 559,
-		type: 'NEW',
-	},
-	{
-		image: './img/cart/1.png',
-		name: 'Augvape Druga Squonker Kit model Q445',
-		price: 599,
-		sale: 799,
-		type: 'HOT',
-	},
-	{
-		image: './img/cart/1.png',
-		name: 'Augvape Druga Squonker Kit model Q445',
-		price: 499,
-		sale: 799,
-		type: 'NEW',
-	},
-] 
-const itemSale = [
-	{
-		image: './img/cart/2.png',
-		name: 'Augvape Druga Squonker Kit model Q445',
-		price: 599,
-		sale: 799,
-		type: 'NEW',
-	},
-	{
-		image: './img/cart/3.png',
-		name: 'Augvape Druga Squonker Kit model Q445',
-		price: 599,
-		sale: 799,
-		type: 'Скидка',
-	},
-	{
-		image: './img/cart/1.png',
-		name: 'Augvape Druga Squonker Kit model Q445',
-		price: 399,
-		sale: 799,
-		type: 'HOT',
-	},
-	{
-		image: './img/cart/4.png',
-		name: 'Augvape Druga Squonker Kit model Q445',
-		price: 299,
-		sale: 799,
-		type: 'NEW',
-	},
-	{
-		image: './img/cart/1.png',
-		name: 'Augvape Druga Squonker Kit model Q445',
-		price: 699,
-		sale: 899,
-		type: 'Скидка',
-	},
-	{
-		image: './img/cart/1.png',
-		name: 'Augvape Druga Squonker Kit model Q445',
-		price: 499,
-		sale: 799,
-		type: 'HOT',
-	},
-	{
-		image: './img/cart/2.png',
-		name: 'Augvape Druga Squonker Kit model Q445',
-		price: 599,
-		sale: 799,
-		type: 'NEW',
-	},
-] 
-
+import CartItemsDB from '../../json/cartItemsDB.json'
 
 const Home = () => {
 	return (
 		<>
-
 			<SliderHome />
-			<CartItems  item={itemNew} title={'Новинки товарів'} />
-			<CartItems  item={itemPopular} title={'Популярні товари'} />
+			<CartItems  item={CartItemsDB} title={'Новинки товарів'} />
+			<CartItems  item={CartItemsDB} title={'Популярні товари'} />
 			<div className='banner'>
 				<img width={1110} height={304} src='./img/baner.jpg' alt='banner' />
 			</div>
-			<CartItems item={itemSale} title={'Товари зі знижкою'} />
+			<CartItems item={CartItemsDB} title={'Товари зі знижкою'} />
 			<div className='home-text'>
 				<div className='home-text__img'>
 					<img
@@ -195,7 +61,7 @@ const Home = () => {
 				</p>
 			</div>
 			<div className='banner'>
-				<img width={1110} height={304} src='./img/baner.jpg' alt='banner' />
+				<img src='./img/baner.jpg' alt='banner' />
 			</div>
 			<News/>
 		</>

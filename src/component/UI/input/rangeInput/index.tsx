@@ -9,10 +9,11 @@ const RangeInput = () => {
 				onChange={event => setInputRange(event.target.value)}
 				className='range-input'
 				min='1'
-				max='84568'
+				max='46568'
 				type='range'
 			/>
-			<p className='range-text'>{inputRange}</p>
+            <span className='ranget-text'>Ціна:</span>
+            <input value={inputRange} onChange={(e)=> setInputRange(e.target.value)} type="number" className="range-text" />
 		</>
 	)
 };

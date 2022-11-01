@@ -1,30 +1,28 @@
-import React from 'react'
 import Breadcrumbs from '../../component/breadcrumbs'
 import FilterCatalog from '../../component/filter/filterCatalog'
 import './catalog.Module.scss'
-import itemsCart from '../../json/items.json'
+import cartItemsDB from '../../json/cartItemsDB.json'
 import ListHeader from '../../component/listHeader'
 import CartItemsCatalog from '../../component/cartItems/cartItemsCatalog'
-interface IItem {
-	image: string
-	name: string
-	price: number
-	sale: number
-	type: string
-}
+import { useEffect, useState } from 'react'
 const Catalog = () => {
-	const items: IItem[] = itemsCart
+    const [sumCarts, setSumCarts] = useState<string>('25');
+    const [rowActivity, setRowActivity] = useState<boolean>(true)
+    const breadcrumbs = [
+		'Головна',
+		'Електронні сигарети'
+	]
 	return (
 		<main className='catalog'>
-			<Breadcrumbs />
+			<Breadcrumbs breadcrumbs={breadcrumbs}/>
 			<h2 className='catalog__title'>Популярні товари</h2>
 			<div className='catalog__content'>
 				<div className='catalog__filter'>
 					<FilterCatalog />
 				</div>
 				<div className='catalog__list'>
-					<ListHeader />
-					<CartItemsCatalog items={items} />
+					<ListHeader setSumCarts={setSumCarts} rowCheck={rowActivity} setRowColumn={setRowActivity}/>
+					<CartItemsCatalog sumCarts={sumCarts} rowActivity={rowActivity} items={cartItemsDB} />
 				</div>
 			</div>
 			<section className='catalog-desc'>

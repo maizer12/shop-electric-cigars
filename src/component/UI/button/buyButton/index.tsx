@@ -1,13 +1,13 @@
 import React, { ReactChild } from 'react';
-import './button.Module.scss'
+import './buyButton.Module.scss'
 interface IProps{
 	width:number,
 	children: ReactChild | React.ReactNode
 	svg?:boolean
 }
-const Buttons = ({width,  children, svg }:IProps) => {
+const BuyButton = ({width,  children, svg }:IProps) => {
 	return (
-		<a href='#' style={{ width: width }} className='button'>
+		<div style={{ width: width }} className='buy-button'>
 			<svg
 				style={{ display: svg ? '' : 'none' }}
 				width='19'
@@ -21,9 +21,9 @@ const Buttons = ({width,  children, svg }:IProps) => {
 					fill='white'
 				/>
 			</svg>
-			{children}
-		</a>
+			{children} 
+		</div>
 	)
 };
 
-export default Buttons;
+export default BuyButton;

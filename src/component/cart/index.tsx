@@ -1,18 +1,14 @@
 import React, { useState } from 'react'
 import { Rating } from 'react-simple-star-rating'
-import Buttons from '../UI/button'
+import Buttons from '../UI/button/buyButton'
 import LikeSetting from '../UI/likeSetting'
 import './cart.Module.scss'
+import { setCartAdd } from '../../redux/slice/cartSlice'
 import { Link } from 'react-router-dom'
-interface IProps {
-	name: string
-	price: number
-	sale: number
-	image: string
-	type: string
-	open: number
-	indx: number
-}
+import { AppDispatch} from '../../redux/hook'
+import ICart from '../../model/ICart'
+import BuyButton from '../UI/button/buyButton'
+
 function tc(a: string) {
 	if (a === 'NEW') {
 		return 'radial-gradient(131.25% 131.25% at 50.68% 131.25%, #461E4D 0%, #92499E 100%),linear-gradient(0deg, #C4C4C4, #C4C4C4)'
@@ -22,12 +18,32 @@ function tc(a: string) {
 		return 'radial-gradient(131.25% 131.25% at 50.68% 131.25%, #A3260F 0%, #DF3616 100%)'
 	}
 }
-
-const Cart = ({ name, price, sale, image, type, open, indx }: IProps) => {
+type IProps ={
+    cartElement: ICart,
+    indx: number,
+    open: number,
+}
+const Cart = ({ cartElement, indx, open }: IProps) => {
+    const reviewsSum = cartElement.reviews.length
+    const dispath = AppDispatch()
 	const [rating, setRating] = useState(0)
 	const handleRating = (rate: number) => {
 		setRating(rate)
 	}
+    const bueCart = ()=>{
+        window.scrollTo(0, 0)
+         dispath( 
+         setCartAdd({
+             "image": cartElement.image,
+             "name": cartElement.name,
+             "price": cartElement.price,
+             "amount": 1,
+             "cashback": 40,
+             "reviews": cartElement.reviews,
+             "sale":cartElement.sale
+            })
+        )
+    }
 	return (
 		<>
 			<div className={`cart ${indx === open ? 'active-cart' : ''}`}>
@@ -35,34 +51,34 @@ const Cart = ({ name, price, sale, image, type, open, indx }: IProps) => {
 					<div className='cart__type'>
 						<span
 							className='cart__type-span'
-							style={{ background: tc(type) }}
+							style={{ background: tc(cartElement.type) }}
 						></span>
-						<h4 className='cart__type-text'>{type}</h4>
+						<h4 className='cart__type-text'>{cartElement.type}</h4>
 					</div>
-					<img src={image} alt='cart' />
+					<img src={cartElement.image[0]} alt='cart' />
 				</div>
-				<h4 className='cart__title'>{name}</h4>
+				<h4 className='cart__title'>{cartElement.name}</h4>
 				<div className='cart__rating'>
 					<div className='cart__star'>
 						<Rating
 							onClick={handleRating}
-							initialValue={4}
+							initialValue={cartElement.star}
 							ratingValue={rating}
 							size={20}
 						/>
 					</div>
-					<div className='cart__reviews'>225 відгуків</div>
+					<div className='cart__reviews'>{reviewsSum}  {reviewsSum > 10? 'відгуків':'відгукa'}</div>
 				</div>
 				<div className='cart__price-status'>
 					<div className='cart__price'>
-						<h4 className='cart__num'>{price} ₴</h4>
-						<p className='cart__sale'>{sale} ₴</p>
+						<h4 className='cart__num'>{cartElement.price} ₴</h4>
+						<p className='cart__sale'>{cartElement.sale} ₴</p>
 					</div>
 					<p className='cart__status'>в наявності</p>
 				</div>
 				<div className={`cart-bottom ${indx === open ? 'active' : ''}`}>
-					<Link to='bue'>
-						<Buttons width={141}>в кошик</Buttons>
+					<Link to='/bue'  onClick={()=> bueCart()}>
+						<BuyButton svg={true} width={141}>в кошик</BuyButton>
 					</Link>
 					<div className='cart-bottom__icons'>
 						<LikeSetting />

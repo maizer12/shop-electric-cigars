@@ -17,37 +17,7 @@
 		width: 100%;
 	}
 }
-.list-header {
-	margin-bottom: 21px;
-	width: 100%;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	&__buttons {
-		display: flex;
-		column-gap: 10px;
-	}
-	&__btn {
-		background: none;
-		svg {
-			path {
-				transition: 0.7s;
-			}
-		}
-		&:hover {
-			svg {
-				path {
-					fill: red;
-					stroke: red;
-				}
-			}
-		}
-	}
-	&__options {
-		display: flex;
-		column-gap: 19px;
-	}
-}
+
 .catalog-desc {
 	padding: 50px 0;
 	border-top: 1px solid #CBCBCB;

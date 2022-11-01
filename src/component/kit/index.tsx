@@ -1,7 +1,7 @@
 import React from 'react'
 import KitItem from './kitItem'
 import './kit.Module.scss'
-import Buttons from '../UI/button/index'
+import Buttons from '../UI/button/buyButton/index'
 const Kit = () => {
 	return (
 		<section className='kit'>

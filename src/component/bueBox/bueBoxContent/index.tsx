@@ -4,10 +4,19 @@ import './bueBoxContent.Module.scss'
 import { Rating } from 'react-simple-star-rating'
 import FilterColor from '../../filter/filterColor'
 import FilterTeg from '../../filter/filterTeg'
-import CalculatorItem from '../../UI/calculatorItem'
-import Buttons from '../../UI/button'
+import Buttons from '../../UI/button/buyButton'
 import Cashback from '../../UI/cashback'
-const BueBoxContent = () => {
+import { AppDispatch, AppSelector } from '../../../redux/hook'
+import { setBasketDB } from '../../../redux/slice/cartSlice'
+import CalkulatorBue from '../../calkulator/calkulatorBue'
+type IProps = {
+    setPopupSwitch: React.Dispatch<React.SetStateAction<boolean>>
+}
+const BueBoxContent = ({setPopupSwitch}:IProps) => {
+    const basketDB = AppSelector(state => state.cartSlice.BasketDBState)
+    const dispath = AppDispatch()
+    const [sumElement, setSumElement] = useState(1)
+    const cartBueCart = AppSelector(state => state.cartSlice.cartBue)
 	const itemVan: string[] = ['Легкий', 'Середній', 'Важкий']
 	const itemTo: string[] = [
 		'Лимон',
@@ -23,6 +32,14 @@ const BueBoxContent = () => {
 	const handleRating = (rate: number) => {
 		setRating(rate)
 	}
+    const addBasket = () => {
+        const basket = basketDB
+        const priceProduct = cartBueCart.price * sumElement
+        const newProduct = {...cartBueCart, amount: sumElement, price: priceProduct} 
+        console.log(newProduct)
+        dispath(setBasketDB(basket.concat([newProduct])))
+        setPopupSwitch(true)
+    }
 	return (
 		<div className='bue-content'>
 			<div className='bue-content__header'>
@@ -30,7 +47,7 @@ const BueBoxContent = () => {
 				<LikeSetting />
 			</div>
 			<div className='bue-content__rating'>
-				<p className='bue-content__reviews'>225 відгуків</p>
+				<p className='bue-content__reviews'>{cartBueCart.reviews.length} відгуків</p>
 				<Rating
 					onClick={handleRating}
 					initialValue={4}
@@ -63,11 +80,6 @@ const BueBoxContent = () => {
 								fill='#C4C4C4'
 							/>
 						</g>
-						<defs>
-							<clipPath id='clip0_180_9464'>
-								<rect width='42' height='51' fill='white' />
-							</clipPath>
-						</defs>
 					</svg>
 				</button>
 			</div>
@@ -75,17 +87,19 @@ const BueBoxContent = () => {
 			<FilterTeg name={'Міцність'} items={itemVan} />
 			<FilterTeg name={'Смак'} items={itemTo} />
 			<div className='bue-content__num-price'>
-				<CalculatorItem />
+				 <CalkulatorBue sumElement={sumElement}  setSumElement={setSumElement}/> 
 				<div className='bue-content__left-item'>
 					<div className='bue-content__price-sale'>
-						<p className='bue-content__sale'>799 ₴</p>
-						<h6 className='bue-content__price'>599 ₴</h6>
+						<p className='bue-content__sale'>{sumElement * cartBueCart.sale} ₴</p>
+						<h6 className='bue-content__price'>{sumElement * cartBueCart.price} ₴</h6>
 					</div>
 					<Cashback/>
 				</div>
 			</div>
 			<div className='bue-content__btn'>
-				<Buttons width={340}>в кошик</Buttons>
+                <div onClick={()=> addBasket()} className="bue-content__btn-inner">
+				    <Buttons svg={true} width={340}>в кошик</Buttons>
+                </div>
 				<button className='bue-content__free'>
 					<svg
 						width='17'

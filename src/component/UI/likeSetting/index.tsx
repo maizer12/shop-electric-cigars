@@ -2,8 +2,8 @@ import React from 'react';
 import './likeSetting.Module.scss'
 const LikeSetting = () => {
 	return (
-		<div className='like-setting'>
-			<div className='like-setting__item'>
+		<ul className='like-setting'>
+			<li className='like-setting__item'>
 				<svg
 					width='23'
 					height='21'
@@ -16,8 +16,8 @@ const LikeSetting = () => {
 						fill='#D0D0D0'
 					/>
 				</svg>
-			</div>
-			<div className='like-setting__item'>
+			</li>
+			<li className='like-setting__item'>
 				<svg
 					width='27'
 					height='27'
@@ -30,8 +30,8 @@ const LikeSetting = () => {
 						fill='#D0D0D0'
 					/>
 				</svg>
-			</div>
-		</div>
+			</li>
+		</ul>
 	)
 };
 

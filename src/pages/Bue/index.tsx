@@ -8,8 +8,16 @@ import BueDesc from '../../component/bueDesc'
 import BueReviews from '../../component/bueReviews'
 import BestReviews from '../../component/bueReviews/bestReviews'
 import BuePagination from '../../component/pagination/buePagination'
+import PopupBue from '../../component/popup/popupBue'
 import './bue.Module.scss'
 const Bue = () => {
+    const [popupSwitch, setPopupSwitch] = useState<boolean>(false);
+    const breadcrumbs = [
+		'Головна',
+		'Електронні сигарети',
+		'Стартові набори',
+		'Стартовий набор OVNS W01 POD KIT (ORIGINAL)',
+	]
 	const pagination: JSX.Element[] = [
 		<BueDesc />,
 		<BueCompatible />,
@@ -20,15 +28,16 @@ const Bue = () => {
 	const [num, setNum] = useState<number>(0)
 	return (
 		<main className='bue'>
-			<Breadcrumbs />
+			<Breadcrumbs breadcrumbs={breadcrumbs}/>
 			<h2 className='bue__title'>
 				Cтартовий набiр OVNS W01 POD KIT (original)
 			</h2>
 			<section className='bue-box'>
 				<BueBoxImage />
-				<BueBoxContent />
+				<BueBoxContent setPopupSwitch={setPopupSwitch} />
 			</section>
 			<BuePagination setNumber={setNum} />
+            {popupSwitch? <PopupBue setPopupSwitch={setPopupSwitch}/>:'' }
 			{pagination[num]}
 		</main>
 	)

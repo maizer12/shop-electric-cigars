@@ -1,29 +1,23 @@
-import React, {useRef, useState} from 'react'
+import { useState} from 'react'
 import Cart from '../cart'
 import './cartItems.Module.scss'
 import { Navigation,  A11y,  } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
-
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import 'swiper/css/scrollbar'
-interface IItem {
-	image: string
-	name: string
-	price: number
-	sale: number
-	type:string
-}
+import ICart from '../../model/ICart'
 interface IProps {
 	title?: string
-	item: IItem[]
+	item: ICart[]
+    rowActivity?:boolean
 }
-const CartItems = ({ title, item }: IProps) => {
+const CartItems = ({ title, item, rowActivity }: IProps) => {
 	const [open, setOpen] = useState<number>(55)
 	
 	return (
-		<section className='cart-items'>
+		<section className='cart-items' >
 			<div className='items-cart'>
 				<div className='items-cart__header'>
 					<h3 className='items-cart__title'>{title}</h3>
@@ -34,8 +28,8 @@ const CartItems = ({ title, item }: IProps) => {
 				<div className='items-cart__items'>
 					<Swiper
 						modules={[Navigation, A11y]}
-						spaceBetween={50}
 						slidesPerView={4}
+                        spaceBetween={30}
 						navigation
 					>
 						{item.map((e, i) => (
@@ -45,13 +39,9 @@ const CartItems = ({ title, item }: IProps) => {
 									onClick={(): void => setOpen(i)}
 								>
 									<Cart
-										indx={i}
-										open={open}
-										type={e.type}
-										name={e.name}
-										image={e.image}
-										price={e.price}
-										sale={e.sale}
+                                        open={open}
+                                        indx={i}
+                                        cartElement={e}
 									/>
 								</div>
 							</SwiperSlide>

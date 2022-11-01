@@ -1,20 +1,17 @@
 import React, { useState } from 'react'
 import './bueBoxImage.Module.scss'
 import ImageMin from './imageMin'
+import { AppSelector } from '../../../redux/hook'
 const BueBoxImage = () => {
-	const [minImage, setMinImage] = useState<string[]>([
-		'./img/cart/1.png',
-		'./img/cart/1.png',
-		'./img/cart/1.png',
-		'./img/cart/1.png',
-	])
+    const imgBueCart = AppSelector(state => state.cartSlice.cartBue)
+    const [openImage, setOpenImage] = useState(0)
 	return (
 		<div className='bue-image'>
 			<div className='bue-image__content'>
 				<div className='bue-image__type'></div>
-				<img width={540} height={494} src='./img/cart/1.png' alt='bue-img' />
+				<img width={540} height={494} src={imgBueCart.image[openImage]} alt='bue-img' />
 			</div>
-			<ImageMin items={minImage}/>
+			<ImageMin openImage={openImage} setOpenImage={setOpenImage} items={imgBueCart.image}/>
 		</div>
 	)
 }

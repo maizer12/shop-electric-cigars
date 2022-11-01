@@ -1,57 +1,7 @@
 import React from 'react'
 import CartItems from '../cartItems'
+import CartDB from '../../json/cartItemsDB.json'
 const BueDelivery = () => {
-	const itemSale = [
-		{
-			image: './img/cart/2.png',
-			name: 'Augvape Druga Squonker Kit model Q445',
-			price: 599,
-			sale: 799,
-			type: 'NEW',
-		},
-		{
-			image: './img/cart/3.png',
-			name: 'Augvape Druga Squonker Kit model Q445',
-			price: 599,
-			sale: 799,
-			type: 'Скидка',
-		},
-		{
-			image: './img/cart/1.png',
-			name: 'Augvape Druga Squonker Kit model Q445',
-			price: 399,
-			sale: 799,
-			type: 'HOT',
-		},
-		{
-			image: './img/cart/4.png',
-			name: 'Augvape Druga Squonker Kit model Q445',
-			price: 299,
-			sale: 799,
-			type: 'NEW',
-		},
-		{
-			image: './img/cart/1.png',
-			name: 'Augvape Druga Squonker Kit model Q445',
-			price: 699,
-			sale: 899,
-			type: 'Скидка',
-		},
-		{
-			image: './img/cart/1.png',
-			name: 'Augvape Druga Squonker Kit model Q445',
-			price: 499,
-			sale: 799,
-			type: 'HOT',
-		},
-		{
-			image: './img/cart/2.png',
-			name: 'Augvape Druga Squonker Kit model Q445',
-			price: 599,
-			sale: 799,
-			type: 'NEW',
-		},
-	]
 	return (
 		<section className='bue-delivery'>
 			<p className='bue-delivery__text'>
@@ -67,7 +17,7 @@ const BueDelivery = () => {
 				середній заряд і червоний - низький заряд). Картридж перезаправлятися,
 				має обсяг 0.7 мл і опір 1.8 Ом.
 			</p>
-			<CartItems item={itemSale} title={'Вас можуть зацікавити'} />
+			<CartItems item={CartDB} title={'Вас можуть зацікавити'} />
 		</section>
 	)
 }

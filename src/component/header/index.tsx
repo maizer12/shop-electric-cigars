@@ -1,21 +1,27 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+import { AppSelector } from '../../redux/hook'
 import './header.Modules.scss'
 import Language from './UI/language'
-const Header = () => {
+type IProps = {
+    setRegistrationOpen:React.Dispatch<React.SetStateAction<boolean>>
+}
+const Header = ({setRegistrationOpen}:IProps) => {
+    const loginUser = AppSelector(state => state.auntificationSlice.userLogin)
 	return (
 		<>
 			<header className='header'>
 				<div className='header__content container'>
 					<nav className='menu'>
-						<a href='#' className='menu__link'>
+						<Link to='/delivery-dispatch' className='menu__link'>
 							Доставка и оплата
-						</a>
+						</Link>
 						<a href='#' className='menu__link'>
 							Контакти
 						</a>
-						<a href='#' className='menu__link'>
+						<Link to='/faq' className='menu__link'>
 							FAQ
-						</a>
+						</Link>
 					</nav>
 					<ul className='header-items'>
 						<li className='header__item'>
@@ -26,10 +32,15 @@ const Header = () => {
 								Кешбек:10
 							</a>
 						</li>
-						<li className='header__item'>
-							<a href='#' className='header__link'>
+						<li className='header__item'>{
+                            loginUser.length >= 1?
+                            <button className='header__link'>
+                                {loginUser}
+                            </button>
+                        :
+							<button onClick={()=> setRegistrationOpen(true)} className='header__link'>
 								Увійти
-							</a>
+							</button>}
 						</li>
 					</ul>
 				</div>

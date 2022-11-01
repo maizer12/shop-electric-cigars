@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './blogItem.Module.scss'
 
 
 interface IProps{
@@ -10,18 +10,18 @@ const NewsItem = ({ images }: IProps) => {
 	return (
 		<>
 			{images.map( e=>
-			<div key={e} className=' news-item'>
-				<img src={e} alt='news-img' className='news-item__img' />
-				<p className='news-item__date'>13.07.2021 | Назва категорії</p>
-				<h5 className='news-item__name'>
+			<div key={e} className=' blog-item'>
+				<img src={e} alt='news-img' className='blog-item__img' />
+				<p className='blog-item__date'>13.07.2021 | Назва категорії</p>
+				<h5 className='blog-item__name'>
 					Електронні сигарети краще звичайних сигарет
 				</h5>
-				<p className='news-item__desc'>
+				<p className='blog-item__desc'>
 					Електронні сигарети стали новим направленням в культурі куріння,
 					зробивши його набагато безпечнішим...
 				</p>
-				<div className='news-item__link'>
-					<button className='news-item__link-text'>читати детальніше</button>
+				<div className='blog-item__link'>
+					<button className='blog-item__link-text'>читати детальніше</button>
 					<svg
 						width='24'
 						height='24'

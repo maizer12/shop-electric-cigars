@@ -3,58 +3,10 @@ import BestReviewsItem from './bestReviewsItem'
 import './bestReviews.Modules.scss'
 import ReviewsButton from '../../UI/button/reviewsButton'
 import CartItems from '../../cartItems'
+import CartItemsDB from '../../../json/cartItemsDB.json'
+import ICart from '../../../model/ICart'
 const BestReviews = () => {
-	const itemSale = [
-		{
-			image: './img/cart/2.png',
-			name: 'Augvape Druga Squonker Kit model Q445',
-			price: 599,
-			sale: 799,
-			type: 'NEW',
-		},
-		{
-			image: './img/cart/3.png',
-			name: 'Augvape Druga Squonker Kit model Q445',
-			price: 599,
-			sale: 799,
-			type: 'Скидка',
-		},
-		{
-			image: './img/cart/1.png',
-			name: 'Augvape Druga Squonker Kit model Q445',
-			price: 399,
-			sale: 799,
-			type: 'HOT',
-		},
-		{
-			image: './img/cart/4.png',
-			name: 'Augvape Druga Squonker Kit model Q445',
-			price: 299,
-			sale: 799,
-			type: 'NEW',
-		},
-		{
-			image: './img/cart/1.png',
-			name: 'Augvape Druga Squonker Kit model Q445',
-			price: 699,
-			sale: 899,
-			type: 'Скидка',
-		},
-		{
-			image: './img/cart/1.png',
-			name: 'Augvape Druga Squonker Kit model Q445',
-			price: 499,
-			sale: 799,
-			type: 'HOT',
-		},
-		{
-			image: './img/cart/2.png',
-			name: 'Augvape Druga Squonker Kit model Q445',
-			price: 599,
-			sale: 799,
-			type: 'NEW',
-		},
-	]
+    const cartDB:ICart[] = CartItemsDB
 	return (
 		<section className='best-reviews'>
 			<div className='best-reviews__header'>
@@ -97,7 +49,7 @@ const BestReviews = () => {
 				<BestReviewsItem />
 				<BestReviewsItem />
 			</div>
-			<CartItems item={itemSale} title={'Вас можуть зацікавити'} />
+			<CartItems item={cartDB} title={'Вас можуть зацікавити'} />
 		</section>
 	)
 }

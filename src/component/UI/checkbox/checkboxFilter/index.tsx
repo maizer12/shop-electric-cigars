@@ -1,13 +1,21 @@
 import React from 'react';
 import './checkboxFilter.Module.scss'
-const CheckboxFilter = () => {
+type IProps = {
+    checkbox: string[],
+    numberCheckbox: string,
+}
+const CheckboxFilter = ({checkbox, numberCheckbox}:IProps) => {
 	return (
-		<div className='checkbox'>
-			<input type='checkbox' id='pizza' />
-			<label className='checkbox__text' htmlFor='pizza'>
-				Пицца
-			</label>
-		</div>
+        <div className='checkbox-filter'>{
+            checkbox.map((e, i)=> 
+		        <div className='checkbox-filter'>
+			        <input type='checkbox' id={`${i + numberCheckbox}`} />
+                    <label className='checkbox-filter__text' htmlFor={`${i + numberCheckbox}`}>
+                        {e}
+                    </label>
+                </div> 
+            )
+        }</div>
 	)
 };
 
