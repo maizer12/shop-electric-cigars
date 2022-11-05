@@ -4,25 +4,33 @@ import './catalog.Module.scss'
 import cartItemsDB from '../../json/cartItemsDB.json'
 import ListHeader from '../../component/listHeader'
 import CartItemsCatalog from '../../component/cartItems/cartItemsCatalog'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 const Catalog = () => {
-    const [sumCarts, setSumCarts] = useState<string>('25');
-    const [rowActivity, setRowActivity] = useState<boolean>(true)
-    const breadcrumbs = [
-		'Головна',
-		'Електронні сигарети'
-	]
+	const [opinionFilter, setOpinionFilter] = useState('1')
+	const [sumCarts, setSumCarts] = useState<string>('25')
+	const [rowActivity, setRowActivity] = useState<boolean>(true)
+	const breadcrumbs = ['Головна', 'Електронні сигарети']
 	return (
 		<main className='catalog'>
-			<Breadcrumbs breadcrumbs={breadcrumbs}/>
+			<Breadcrumbs breadcrumbs={breadcrumbs} />
 			<h2 className='catalog__title'>Популярні товари</h2>
 			<div className='catalog__content'>
 				<div className='catalog__filter'>
 					<FilterCatalog />
 				</div>
 				<div className='catalog__list'>
-					<ListHeader setSumCarts={setSumCarts} rowCheck={rowActivity} setRowColumn={setRowActivity}/>
-					<CartItemsCatalog sumCarts={sumCarts} rowActivity={rowActivity} items={cartItemsDB} />
+					<ListHeader
+						getOpinion={setOpinionFilter}
+						setSumCarts={setSumCarts}
+						rowCheck={rowActivity}
+						setRowColumn={setRowActivity}
+					/>
+					<CartItemsCatalog
+						filterItems={opinionFilter}
+						sumCarts={sumCarts}
+						rowActivity={rowActivity}
+						items={cartItemsDB}
+					/>
 				</div>
 			</div>
 			<section className='catalog-desc'>

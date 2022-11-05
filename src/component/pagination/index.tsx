@@ -10,10 +10,10 @@ const Pagination = () => {
 	const name:itemsObject[] = [
 		{name:'Каталог товарів', link:'/'},
 		{name:'Акції', link:'/catalog'},
-		{name:'Популярне ', link:'/blog'},
-		{name:'Рod системи', link:'/blog'},
-		{name:'Одноразові', link:'/blog'},
-		{name:'Рідини ', link:'/blog'},
+		{name:'Популярне ', link:'/catalog'},
+		{name:'Рod системи', link:'/catalog'},
+		{name:'Одноразові', link:'/catalog'},
+		{name:'Рідини ', link:'/catalog'},
 		{name:'Блог', link:'/blog'},
 	]
 	return (
