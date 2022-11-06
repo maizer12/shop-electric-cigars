@@ -15,10 +15,11 @@ import PopupRegistrationLogin from './component/popup/popupRegistrationLogin'
 import DeliveryDispatch from './pages/DeliveryDispatch'
 import Faq from './pages/Faq'
 import Contact from './pages/Contact'
+import Favorites from './pages/Favorites'
 function App() {
     const [registrationOpen, setRegistrationOpen] = useState(false);
 	return (
-		<main className='main'>
+		<>
 			<Header setRegistrationOpen={setRegistrationOpen} />
 			<Navigation />
 			<Pagination />
@@ -33,11 +34,12 @@ function App() {
 					<Route path='/delivery-dispatch' element={<DeliveryDispatch/>} />
 					<Route path='/faq' element={<Faq/>} />
 					<Route path='/contact' element={<Contact/>} />
+					<Route path='/favorites' element={<Favorites/>} />
 				</Routes>
 			}
             {registrationOpen?<PopupRegistrationLogin setRegistrationOpen={setRegistrationOpen} />:''}
 			<Footer />
-		</main>
+		</>
 	)
 }
 

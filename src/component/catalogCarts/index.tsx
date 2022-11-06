@@ -1,9 +1,11 @@
 import React, { useMemo, useState } from 'react'
-import Cart from '../../cart'
-import PaginationCards from '../../pagination/paginationCards'
-import './cartItemsCatalog.Module.scss'
-import ICart from '../../../model/ICart'
-
+import Cart from '../cart'
+import PaginationCards from '../pagination/paginationCards'
+import './catalogCarts.Module.scss'
+import ICart from '../../model/ICart'
+import { Link } from 'react-router-dom'
+import { setCartAdd } from '../../redux/slice/cartSlice'
+import { AppDispatch } from '../../redux/hook'
 interface IProps {
 	items: ICart[]
 	rowActivity: boolean
@@ -14,12 +16,13 @@ type ISortNumber = {
 	a: number
 	b: number
 }
-const CartItemsCatalog = ({
+const CatalogCarts = ({
 	items,
 	rowActivity,
 	sumCarts,
 	filterItems,
 }: IProps) => {
+	const dispatch = AppDispatch()
 	const cartsSortDB = [...items]
 	const [sortPrice, setSortPrice] = useState<ISortNumber>({ a: 0, b: 0 })
 	const cartSort = cartsSortDB.sort(function (a, b) {
@@ -58,7 +61,9 @@ const CartItemsCatalog = ({
 			>
 				{cartsDB.map((e, i) =>
 					i <= Number(sumCarts) && i > sumPagination ? (
-						<Cart key={i} indx={i} open={55} cartElement={e} />
+						<Link onClick={() => dispatch(setCartAdd(e))} to='/bue'>
+							<Cart key={i} indx={i} open={55} cartElement={e} />
+						</Link>
 					) : (
 						''
 					)
@@ -73,4 +78,4 @@ const CartItemsCatalog = ({
 	)
 }
 
-export default CartItemsCatalog
+export default CatalogCarts

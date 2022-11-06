@@ -3,7 +3,7 @@ import FilterCatalog from '../../component/filter/filterCatalog'
 import './catalog.Module.scss'
 import cartItemsDB from '../../json/cartItemsDB.json'
 import ListHeader from '../../component/listHeader'
-import CartItemsCatalog from '../../component/cartItems/cartItemsCatalog'
+import CatalogCarts from '../../component/catalogCarts'
 import { useState } from 'react'
 const Catalog = () => {
 	const [opinionFilter, setOpinionFilter] = useState('1')
@@ -25,7 +25,7 @@ const Catalog = () => {
 						rowCheck={rowActivity}
 						setRowColumn={setRowActivity}
 					/>
-					<CartItemsCatalog
+					<CatalogCarts
 						filterItems={opinionFilter}
 						sumCarts={sumCarts}
 						rowActivity={rowActivity}

@@ -6,7 +6,7 @@ import CartItemsDB from '../../json/cartItemsDB.json'
 
 const Home = () => {
 	return (
-		<>
+		<main >
 			<SliderHome />
 			<CartItems  item={CartItemsDB} title={'Новинки товарів'} />
 			<CartItems  item={CartItemsDB} title={'Популярні товари'} />
@@ -64,7 +64,7 @@ const Home = () => {
 				<img src='./img/baner.jpg' alt='banner' />
 			</div>
 			<News/>
-		</>
+		</main>
 	)
 }
 

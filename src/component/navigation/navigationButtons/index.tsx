@@ -10,7 +10,7 @@ const NavigationButtons = () => {
 		link: string
 	}
 	const btn: IButton[] = [
-		{ url: './img/btn/1.svg', text: 'Обране', link: '' },
+		{ url: './img/btn/1.svg', text: 'Обране', link: '/favorites' },
 		{ url: './img/btn/2.svg', text: 'Порівняння', link: '' },
 		{ url: './img/btn/3.svg', text: 'Корзина', link: '/basket' },
 	]
