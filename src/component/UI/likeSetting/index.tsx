@@ -1,9 +1,12 @@
 import React from 'react';
 import './likeSetting.Module.scss'
-const LikeSetting = () => {
+type IProps = {
+	active:boolean
+}
+const LikeSetting = ({active}:IProps) => {
 	return (
 		<ul className='like-setting'>
-			<li className='like-setting__item'>
+			<li className={`like-setting__item ${active? 'item-like-active': ''}`}>
 				<svg
 					width='23'
 					height='21'

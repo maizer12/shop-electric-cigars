@@ -44,7 +44,7 @@ const BueBoxContent = ({setPopupSwitch}:IProps) => {
 		<div className='bue-content'>
 			<div className='bue-content__header'>
 				<p className='bue-content__status'>В наявності</p>
-				<LikeSetting />
+				<LikeSetting active={false} />
 			</div>
 			<div className='bue-content__rating'>
 				<p className='bue-content__reviews'>{cartBueCart.reviews.length} відгуків</p>

@@ -15,6 +15,10 @@ const DeliveryDispatch = () => {
 		'Повернення товару',
 		'Умови',
 	]
+	const scrollStarted = (a:number, i:number)=>{
+		document.documentElement.scrollTop = a
+		setActivePagination(i)
+	}
 	const [activePagination, setActivePagination] = useState<number>(0)
 	return (
 		<main className='delivery-dispatch'>
@@ -24,8 +28,8 @@ const DeliveryDispatch = () => {
 				<ul className='delivery-dispatch-pagination'>
 					{paginationItem.map((e, i) => (
 						<li
+							onClick={() => scrollStarted(i * 200, i)}
 							key={e}
-							onClick={() => setActivePagination(i)}
 							className={`delivery-dispatch-pagination__item ${
 								activePagination === i ? 'pagination-active' : ''
 							}`}
