@@ -10,13 +10,17 @@ const Catalog = () => {
 	const [sumCarts, setSumCarts] = useState<string>('25')
 	const [rowActivity, setRowActivity] = useState<boolean>(true)
 	const breadcrumbs = ['Головна', 'Електронні сигарети']
+	const [inputRange, setInputRange] = useState<string>('0')
 	return (
 		<main className='catalog'>
 			<Breadcrumbs breadcrumbs={breadcrumbs} />
 			<h2 className='catalog__title'>Популярні товари</h2>
 			<div className='catalog__content'>
 				<div className='catalog__filter'>
-					<FilterCatalog />
+					<FilterCatalog
+						inputRange={inputRange}
+						setInputRange={setInputRange}
+					/>
 				</div>
 				<div className='catalog__list'>
 					<ListHeader
@@ -26,6 +30,7 @@ const Catalog = () => {
 						setRowColumn={setRowActivity}
 					/>
 					<CatalogCarts
+						inputRange={inputRange}
 						filterItems={opinionFilter}
 						sumCarts={sumCarts}
 						rowActivity={rowActivity}

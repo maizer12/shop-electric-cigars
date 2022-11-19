@@ -11,6 +11,7 @@ interface IProps {
 	rowActivity: boolean
 	sumCarts: string
 	filterItems: string
+	inputRange: string
 }
 type ISortNumber = {
 	a: number
@@ -21,6 +22,7 @@ const CatalogCarts = ({
 	rowActivity,
 	sumCarts,
 	filterItems,
+	inputRange,
 }: IProps) => {
 	const dispatch = AppDispatch()
 	const cartsSortDB = [...items]
@@ -35,6 +37,9 @@ const CatalogCarts = ({
 		return 0
 	})
 	const [cartsDB, setCartsDB] = useState(items)
+	useMemo(()=> {
+		setCartsDB(items.filter(e => e.price > Number(inputRange)))
+	}, [inputRange])
 	useMemo(() => {
 		if (filterItems === '2') {
 			setSortPrice({ a: 1, b: -1 })
@@ -61,8 +66,8 @@ const CatalogCarts = ({
 			>
 				{cartsDB.map((e, i) =>
 					i <= Number(sumCarts) && i > sumPagination ? (
-						<Link onClick={() => dispatch(setCartAdd(e))} to='/bue'>
-							<Cart key={i} indx={i} open={55} cartElement={e} />
+						<Link key={i} onClick={() => dispatch(setCartAdd(e))} to='/bue'>
+							<Cart indx={i} open={55} cartElement={e} />
 						</Link>
 					) : (
 						''

@@ -61,7 +61,7 @@ const Home = () => {
 				</p>
 			</div>
 			<div className='banner'>
-				<img src='./img/baner.jpg' alt='banner' />
+				<img src='./img/banner.jpg' alt='banner' />
 			</div>
 			<News/>
 		</main>
