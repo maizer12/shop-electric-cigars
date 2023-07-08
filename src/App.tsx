@@ -1,10 +1,9 @@
-import React, { useState } from 'react'
+import './assets/style/main.scss'
+import { useState } from 'react'
 import Footer from './components/Footer'
 import Header from './components/Header'
-
 import Bue from './pages/Bue'
 import Home from './pages/Home'
-import './assets/style/null.scss'
 import { Route, Routes } from 'react-router-dom'
 import Basket from './pages/Basket'
 import Catalog from './pages/Сatalog'

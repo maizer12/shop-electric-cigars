@@ -7,7 +7,7 @@ import Language from './Language'
 import Navigation from './Navigation'
 import Contacts from './Contacts'
 import { logo } from '../../_config'
-import Search from '../search'
+import Search from '../Search'
 import HeaderButtons from './HeaderButtons'
 type IProps = {
 	setRegistrationOpen: React.Dispatch<React.SetStateAction<boolean>>
@@ -50,27 +50,19 @@ const Header = ({ setRegistrationOpen }: IProps) => {
 						</ul>
 					</div>
 				</div>
-				<div className='header__inner'>
-					<section className='navigation'>
-						<div className='navigation__content container'>
-							<div className='navigation__colum'>
-								<Link to='/' className='navigation__logo'>
-									<img
-										width={217}
-										height={60}
-										style={{ objectFit: 'contain' }}
-										src={logo.header}
-										alt='logo'
-									/>
-								</Link>
-								<Search />
-							</div>
-							<div className='navigation__contact'>
-								<Contacts />
-							</div>
-							<HeaderButtons />
+				<div className='header-inner'>
+					<div className='header-inner__content container'>
+						<div className='header-inner__colum'>
+							<Link to='/' className='header-inner__logo'>
+								<img src={logo.header} alt='logo' />
+							</Link>
+							<Search />
 						</div>
-					</section>
+						<div className='header-inner__contact'>
+							<Contacts />
+						</div>
+						<HeaderButtons />
+					</div>
 				</div>
 				<Navigation />
 			</header>

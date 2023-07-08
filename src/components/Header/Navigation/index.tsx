@@ -17,23 +17,24 @@ function Navigation() {
 		{ name: 'Блог', link: '/blog' },
 	]
 	return (
-		<section className='pagination'>
-			<div className='pagination__content container'>
-				<ul className='pagination__items'>
+		<nav className='navigation'>
+			<div className='navigation__content container'>
+				<ul className='navigation__items'>
 					{name.map((e, i) => (
 						<li
 							key={e.name}
 							onClick={() => setNum(i)}
-							className={`pagination__item + ${num === i ? 'active' : ''}`}
+							className={`navigation__item + ${num === i ? 'active' : ''}`}
 						>
-							<Link to={e.link} className='pagination__link'>
+							<Link to={e.link} className='navigation__link'>
+								{!i && <img src='./img/navbar.svg' alt='catalog' />}
 								{e.name}
 							</Link>
 						</li>
 					))}
 				</ul>
 			</div>
-		</section>
+		</nav>
 	)
 }
 

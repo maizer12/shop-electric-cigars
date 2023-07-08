@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { navigationButtons } from '../../../_config'
+import { headerButtons } from '../const'
 import BtnHeader from '../../UI/Buttons/BtnHeader'
 
 const HeaderButtons = () => {
@@ -7,7 +7,7 @@ const HeaderButtons = () => {
 	console.log(activePagination)
 	return (
 		<div className='header-buttons'>
-			{navigationButtons.map((e, i) => (
+			{headerButtons.map((e, i) => (
 				<BtnHeader
 					key={e.name}
 					{...e}

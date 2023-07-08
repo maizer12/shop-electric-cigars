@@ -28,7 +28,7 @@ const Faq = () => {
 						<div className='faq-item__head' onClick={() => accordionOpen(i)}>
 							<h2 className='faq-item__title'>{e.name}</h2>
 							<img
-								src='./assets/images/arrow.svg'
+								src='./img/arrow.svg'
 								alt='arrow'
 								className={`faq-item__svg ${
 									openAccordion[i] ? 'svg-open' : ''

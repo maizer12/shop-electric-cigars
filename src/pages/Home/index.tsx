@@ -11,7 +11,7 @@ const Home = () => {
 			<CartItems item={CartItemsDB} title={'Новинки товарів'} />
 			<CartItems item={CartItemsDB} title={'Популярні товари'} />
 			<div className='banner'>
-				<img width={1110} height={304} src='./img/baner.jpg' alt='banner' />
+				<img width={1110} height={304} src='./img/banner.jpg' alt='banner' />
 			</div>
 			<CartItems item={CartItemsDB} title={'Товари зі знижкою'} />
 			<div className='home-text'>
@@ -56,7 +56,7 @@ const Home = () => {
 				</p>
 			</div>
 			<div className='banner'>
-				<img src='./assets/images/banner.jpg' alt='banner' />
+				<img src='./img/banner.jpg' alt='banner' />
 			</div>
 			<News />
 		</main>

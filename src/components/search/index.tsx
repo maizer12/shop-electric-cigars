@@ -1,5 +1,5 @@
-import React from 'react';
-import './search.Module.scss'
+import React from 'react'
+import './Search.scss'
 const Search = () => {
 	return (
 		<label className='search'>
@@ -24,6 +24,6 @@ const Search = () => {
 			</button>
 		</label>
 	)
-};
+}
 
-export default Search;
+export default Search
