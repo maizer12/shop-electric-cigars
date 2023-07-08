@@ -7,7 +7,7 @@ import Language from './Language'
 import Navigation from './Navigation'
 import Contacts from './Contacts'
 import { logo } from '../../_config'
-import Search from '../Search'
+import Search from '../search'
 import HeaderButtons from './HeaderButtons'
 type IProps = {
 	setRegistrationOpen: React.Dispatch<React.SetStateAction<boolean>>
