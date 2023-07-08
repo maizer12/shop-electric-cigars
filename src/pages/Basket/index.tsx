@@ -1,36 +1,36 @@
-import Breadcrumbs from '../../component/breadcrumbs'
-import ReviewsButton from '../../component/UI/button/reviewsButton'
-import Button from '../../component/UI/button/buyButton'
+import Breadcrumbs from '../../components/breadcrumbs'
+import ReviewsButton from '../../components/UI/Buttons/reviewsButton'
+import Button from '../../components/UI/Buttons/buyButton'
 import './basket.Module.scss'
 import BasketItems from './basketItems'
-import {AppSelector} from '../../redux/hook'
-import PopupSuccessfulBue from '../../component/popup/popupSuccessfulBue'
+import { AppSelector } from '../../hooks'
+import PopupSuccessfulBue from '../../components/popup/popupSuccessfulBue'
 import { Link } from 'react-router-dom'
 const Basket = () => {
-    const BasketDB = AppSelector(state => state.cartSlice.BasketDBState)
-    const breadcrumbs = [
+	const BasketDB = AppSelector(state => state.cartSlice.BasketDBState)
+	const breadcrumbs = [
 		'Головна',
 		'Електронні сигарети',
 		'Стартові набори',
 		'Стартовий набор OVNS W01 POD KIT (ORIGINAL)',
 	]
-    let sumPrices = 0;
-    let sumCashback = 0;
-    const calcSum = (price:number, casback:number)=>{
-        sumPrices += price
-        sumCashback += casback
-    }
-    function test(){
-        window.scrollY = 10
-    }
-    test()
-    console.log(window.scrollY)
-    BasketDB.map(e =>  calcSum(e.price, e.cashback))
+	let sumPrices = 0
+	let sumCashback = 0
+	const calcSum = (price: number, casback: number) => {
+		sumPrices += price
+		sumCashback += casback
+	}
+	function test() {
+		window.scrollY = 10
+	}
+	test()
+	console.log(window.scrollY)
+	BasketDB.map(e => calcSum(e.price, e.cashback))
 	return (
 		<main className='basket'>
-			<Breadcrumbs breadcrumbs={breadcrumbs}/>
+			<Breadcrumbs breadcrumbs={breadcrumbs} />
 			<h2 className='basket__title'>Корзина</h2>
-			<BasketItems BasketDB={BasketDB}/> 
+			<BasketItems BasketDB={BasketDB} />
 			<section className='basket-bue'>
 				<div className='basket-bue__price-cashback'>
 					<div className='basket-bue__cashback'>
@@ -43,12 +43,12 @@ const Basket = () => {
 					</div>
 				</div>
 				<div className='basket-bue__buttons'>
-                    <Link to={'/catalog'} className="basket-bue__button">
-					    <ReviewsButton children={'ПРОДОВЖИТИ ПОКУПКИ'} />
-                    </Link>
-                    <div className="basket-bue__button">
-					    <Button width={228} svg={false} children={'ОФОРМИТИ ЗАМОВЛЕННЯ'} />
-                    </div>
+					<Link to={'/catalog'} className='basket-bue__button'>
+						<ReviewsButton children={'ПРОДОВЖИТИ ПОКУПКИ'} />
+					</Link>
+					<div className='basket-bue__button'>
+						<Button width={228} svg={false} children={'ОФОРМИТИ ЗАМОВЛЕННЯ'} />
+					</div>
 				</div>
 			</section>
 		</main>

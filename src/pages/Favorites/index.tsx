@@ -1,11 +1,11 @@
-import Breadcrumbs from '../../component/breadcrumbs'
-import FavoritesItem from '../../component/favoritesItem'
-import { AppSelector } from '../../redux/hook'
+import Breadcrumbs from '../../components/breadcrumbs'
+import FavoritesItem from '../../components/favoritesItem'
+import { AppSelector } from '../../hooks'
 import './favorites.Module.scss'
 
 const Favorites = () => {
 	const FavoritesDB = AppSelector(state => state.favoriteSlice.favoritesDB)
-	console.log(FavoritesDB)
+
 	const breadcrumbs = ['Головна', 'Обране']
 	return (
 		<main className='favorites'>

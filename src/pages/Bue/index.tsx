@@ -1,18 +1,18 @@
 import React, { useState } from 'react'
-import Breadcrumbs from '../../component/breadcrumbs'
-import BueBoxContent from '../../component/bueBox/bueBoxContent'
-import BueBoxImage from '../../component/bueBox/bueBoxImage'
-import BueCompatible from '../../component/bueCompatible'
-import BueDelivery from '../../component/bueDelivery'
-import BueDesc from '../../component/bueDesc'
-import BueReviews from '../../component/bueReviews'
-import BestReviews from '../../component/bueReviews/bestReviews'
-import BuePagination from '../../component/pagination/buePagination'
-import PopupBue from '../../component/popup/popupBue'
+import Breadcrumbs from '../../components/breadcrumbs'
+import BueBoxContent from '../../components/bueBox/bueBoxContent'
+import BueBoxImage from '../../components/bueBox/bueBoxImage'
+import BueCompatible from '../../components/bueCompatible'
+import BueDelivery from '../../components/bueDelivery'
+import BueDesc from '../../components/bueDesc'
+import BueReviews from '../../components/bueReviews'
+import BestReviews from '../../components/bueReviews/bestReviews'
+import BuePagination from '../../components/pagination/buePagination'
+import PopupBue from '../../components/popup/popupBue'
 import './bue.Module.scss'
 const Bue = () => {
-    const [popupSwitch, setPopupSwitch] = useState<boolean>(false);
-    const breadcrumbs = [
+	const [popupSwitch, setPopupSwitch] = useState<boolean>(false)
+	const breadcrumbs = [
 		'Головна',
 		'Електронні сигарети',
 		'Стартові набори',
@@ -28,7 +28,7 @@ const Bue = () => {
 	const [num, setNum] = useState<number>(0)
 	return (
 		<main className='bue'>
-			<Breadcrumbs breadcrumbs={breadcrumbs}/>
+			<Breadcrumbs breadcrumbs={breadcrumbs} />
 			<h2 className='bue__title'>
 				Cтартовий набiр OVNS W01 POD KIT (original)
 			</h2>
@@ -37,7 +37,7 @@ const Bue = () => {
 				<BueBoxContent setPopupSwitch={setPopupSwitch} />
 			</section>
 			<BuePagination setNumber={setNum} />
-            {popupSwitch? <PopupBue setPopupSwitch={setPopupSwitch}/>:'' }
+			{popupSwitch ? <PopupBue setPopupSwitch={setPopupSwitch} /> : ''}
 			{pagination[num]}
 		</main>
 	)

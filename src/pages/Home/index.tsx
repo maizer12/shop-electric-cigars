@@ -1,27 +1,22 @@
-import CartItems from '../../component/cartItems'
-import News from '../../component/news'
-import SliderHome from '../../component/slider'
+import CartItems from '../../components/cartItems'
+import News from '../../components/news'
+import SliderHome from '../../components/slider'
 import './home.Module.scss'
-import CartItemsDB from '../../json/cartItemsDB.json'
+import CartItemsDB from '../../services/cartItemsDB.json'
 
 const Home = () => {
 	return (
-		<main >
+		<main>
 			<SliderHome />
-			<CartItems  item={CartItemsDB} title={'Новинки товарів'} />
-			<CartItems  item={CartItemsDB} title={'Популярні товари'} />
+			<CartItems item={CartItemsDB} title={'Новинки товарів'} />
+			<CartItems item={CartItemsDB} title={'Популярні товари'} />
 			<div className='banner'>
 				<img width={1110} height={304} src='./img/baner.jpg' alt='banner' />
 			</div>
 			<CartItems item={CartItemsDB} title={'Товари зі знижкою'} />
 			<div className='home-text'>
 				<div className='home-text__img'>
-					<img
-						width={13}
-						height={19}
-						src='./img/bord.svg'
-						alt='border-icon'
-					/>
+					<img width={13} height={19} src='./img/bord.svg' alt='border-icon' />
 				</div>
 				<h3 className='home-text__title'>Магазин товарів для куріння</h3>
 				<p className='home-text__desc'>
@@ -61,9 +56,9 @@ const Home = () => {
 				</p>
 			</div>
 			<div className='banner'>
-				<img src='./img/banner.jpg' alt='banner' />
+				<img src='./assets/images/banner.jpg' alt='banner' />
 			</div>
-			<News/>
+			<News />
 		</main>
 	)
 }

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Breadcrumbs from '../../component/breadcrumbs'
+import Breadcrumbs from '../../components/breadcrumbs'
 import './faq.Module.scss'
 import { faqText } from './faqText'
 const Faq = () => {
@@ -28,7 +28,7 @@ const Faq = () => {
 						<div className='faq-item__head' onClick={() => accordionOpen(i)}>
 							<h2 className='faq-item__title'>{e.name}</h2>
 							<img
-								src='./img/arrow.svg'
+								src='./assets/images/arrow.svg'
 								alt='arrow'
 								className={`faq-item__svg ${
 									openAccordion[i] ? 'svg-open' : ''

@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react'
-import Breadcrumbs from '../../component/breadcrumbs'
+import Breadcrumbs from '../../components/breadcrumbs'
 import './DeliveryDispatch.Module.scss'
 import { deliveryDesc } from './deliveryDesc'
 const DeliveryDispatch = () => {
@@ -15,7 +15,7 @@ const DeliveryDispatch = () => {
 		'Повернення товару',
 		'Умови',
 	]
-	const scrollStarted = (a:number, i:number)=>{
+	const scrollStarted = (a: number, i: number) => {
 		document.documentElement.scrollTop = a
 		setActivePagination(i)
 	}
