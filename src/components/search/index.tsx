@@ -1,6 +1,9 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './Search.scss'
 const Search = () => {
+	useEffect(() => {
+		console.log(123)
+	}, [])
 	return (
 		<label className='search'>
 			<input
