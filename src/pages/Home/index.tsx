@@ -1,7 +1,7 @@
-import CartItems from '../../components/cartItems'
-import News from '../../components/news'
-import SliderHome from '../../components/slider'
-import './home.Module.scss'
+import CartItems from '../../components/Products/CartItems'
+import News from '../../components/News'
+import SliderHome from '../../components/UI/Slider'
+import './Home.scss'
 import CartItemsDB from '../../services/cartItemsDB.json'
 
 const Home = () => {

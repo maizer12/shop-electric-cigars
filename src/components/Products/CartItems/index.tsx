@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import Cart from '../cart'
+import Cart from '../Cart'
 import './cartItems.Module.scss'
 import { Navigation, A11y } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
@@ -7,8 +7,8 @@ import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import 'swiper/css/scrollbar'
-import ICart from '../../types/ICart'
-import BtnLink from '../UI/Buttons/BtnLink'
+import ICart from '../../../types/ICart'
+import BtnLink from '../../UI/Buttons/BtnLink'
 interface IProps {
 	title?: string
 	item: ICart[]

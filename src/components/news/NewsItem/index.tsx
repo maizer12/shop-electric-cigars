@@ -1,4 +1,4 @@
-import BtnLink from '../UI/Buttons/BtnLink'
+import BtnLink from '../../UI/Buttons/BtnLink'
 import './BlogItem.scss'
 
 interface IProps {

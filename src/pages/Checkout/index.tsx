@@ -1,7 +1,6 @@
-import React from 'react'
-import Breadcrumbs from '../../components/breadcrumbs'
-import CheckoutForm from '../../components/checkoutForm'
-import YourOrder from '../../components/yourOrder'
+import Breadcrumbs from '../../components/UI/Breadcrumbs'
+import CheckoutForm from '../../components/CheckoutForm'
+import YourOrder from '../../components/YourOrder'
 import './checkout.Module.scss'
 const Checkout = () => {
 	const breadcrumbs = [

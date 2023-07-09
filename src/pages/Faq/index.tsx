@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Breadcrumbs from '../../components/breadcrumbs'
+import Breadcrumbs from '../../components/UI/Breadcrumbs'
 import './faq.Module.scss'
 import { faqText } from './faqText'
 const Faq = () => {

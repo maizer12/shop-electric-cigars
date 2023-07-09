@@ -1,13 +1,13 @@
 import { useState } from 'react'
 import { Rating } from 'react-simple-star-rating'
-import LikeSetting from '../UI/likeSetting'
+import LikeSetting from '../../UI/LikeSetting'
 import './cart.Module.scss'
-import { setCartAdd } from '../../store/slice/cartSlice'
+import { setCartAdd } from '../../../store/slice/cartSlice'
 import { Link } from 'react-router-dom'
-import { AppDispatch, AppSelector } from '../../hooks'
-import { setFavoritesDB } from '../../store/slice/favoriteSlice'
-import ICart from '../../types/ICart'
-import BuyButton from '../UI/Buttons/buyButton'
+import { AppDispatch, AppSelector } from '../../../hooks'
+import { setFavoritesDB } from '../../../store/slice/favoriteSlice'
+import ICart from '../../../types/ICart'
+import BuyButton from '../../UI/Buttons/BuyButton'
 
 function tc(a: string) {
 	if (a === 'NEW') {

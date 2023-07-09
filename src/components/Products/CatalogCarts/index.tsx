@@ -1,11 +1,11 @@
 import React, { useMemo, useState } from 'react'
-import Cart from '../cart'
-import PaginationCards from '../pagination/paginationCards'
+import Cart from '../Cart'
+import PaginationCards from '../../UI/Pagination/PaginationCards'
 import './catalogCarts.Module.scss'
-import ICart from '../../types/ICart'
+import ICart from '../../../types/ICart'
 import { Link } from 'react-router-dom'
-import { setCartAdd } from '../../store/slice/cartSlice'
-import { AppDispatch } from '../../hooks'
+import { setCartAdd } from '../../../store/slice/cartSlice'
+import { AppDispatch } from '../../../hooks'
 interface IProps {
 	items: ICart[]
 	rowActivity: boolean

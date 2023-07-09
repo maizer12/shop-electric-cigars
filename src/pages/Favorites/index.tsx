@@ -1,5 +1,5 @@
-import Breadcrumbs from '../../components/breadcrumbs'
-import FavoritesItem from '../../components/favoritesItem'
+import Breadcrumbs from '../../components/UI/Breadcrumbs'
+import FavoritesItem from '../../components/FavoritesItem'
 import { AppSelector } from '../../hooks'
 import './favorites.Module.scss'
 

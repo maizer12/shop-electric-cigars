@@ -1,6 +1,6 @@
 import './bueDesc.Module.scss'
-import CartItems from '../cartItems'
-import Kit from '../kit'
+import CartItems from '../Products/CartItems'
+import Kit from '../Kit'
 import CartDB from '../../services/cartItemsDB.json'
 const BueDesc = () => {
 	return (

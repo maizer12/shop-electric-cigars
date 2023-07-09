@@ -1,6 +1,6 @@
-import React from 'react';
-import CheckboxFilter from '../../UI/checkbox/checkboxFilter';
-import RangeInput from '../../UI/input/rangeInput';
+import React from 'react'
+import CheckboxFilter from '../../UI/Inputs/Checkbox/checkboxFilter'
+import RangeInput from '../../UI/Inputs/RangeInput'
 import './filterCatalog.Module.scss'
 type IProps = {
 	inputRange: string
@@ -26,4 +26,4 @@ const FilterCatalog = ({ inputRange, setInputRange }: IProps) => {
 	)
 }
 
-export default FilterCatalog;
+export default FilterCatalog

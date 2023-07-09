@@ -1,9 +1,9 @@
-import Breadcrumbs from '../../components/breadcrumbs'
-import FilterCatalog from '../../components/filter/filterCatalog'
+import Breadcrumbs from '../../components/UI/Breadcrumbs'
+import FilterCatalog from '../../components/Filter/filterCatalog'
 import './catalog.Module.scss'
 import cartItemsDB from '../../services/cartItemsDB.json'
-import ListHeader from '../../components/listHeader'
-import CatalogCarts from '../../components/catalogCarts'
+import ListHeader from '../../components/Header/ListHeader'
+import CatalogCarts from '../../components/Products/CatalogCarts'
 import { useState } from 'react'
 const Catalog = () => {
 	const [opinionFilter, setOpinionFilter] = useState('1')

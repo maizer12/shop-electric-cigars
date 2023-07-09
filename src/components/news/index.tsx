@@ -1,5 +1,5 @@
 import React from 'react'
-import NewsItem from '../BlogItem'
+import NewsItem from '../News/NewsItem'
 import './news.Module.scss'
 import newsData from '../../services/newsItems.json'
 

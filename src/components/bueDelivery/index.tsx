@@ -1,5 +1,5 @@
 import React from 'react'
-import CartItems from '../cartItems'
+import CartItems from '../Products/CartItems'
 import CartDB from '../../services/cartItemsDB.json'
 const BueDelivery = () => {
 	return (

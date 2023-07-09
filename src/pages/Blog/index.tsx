@@ -1,7 +1,7 @@
 import React from 'react'
-import Breadcrumbs from '../../components/breadcrumbs'
+import Breadcrumbs from '../../components/UI/Breadcrumbs'
 import './blog.Module.scss'
-import BlogItem from '../../components/BlogItem'
+import BlogItem from '../../components/News/NewsItem'
 import BlogDB from '../../services/newsItems.json'
 const Blog = () => {
 	const breadcrumbs = ['Блог', 'Поради']

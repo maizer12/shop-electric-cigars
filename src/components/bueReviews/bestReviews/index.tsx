@@ -1,8 +1,8 @@
 import React from 'react'
 import BestReviewsItem from './bestReviewsItem'
 import './bestReviews.Modules.scss'
-import ReviewsButton from '../../UI/Buttons/reviewsButton'
-import CartItems from '../../cartItems'
+import ReviewsButton from '../../UI/Buttons/ReviewsButton'
+import CartItems from '../../Products/CartItems'
 import CartItemsDB from '../../../services/cartItemsDB.json'
 import ICart from '../../../types/ICart'
 const BestReviews = () => {

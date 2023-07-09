@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
-import { AppDispatch, AppSelector } from '../../../hooks'
-import Buttons from '../../UI/Buttons/buyButton'
-import ReviewsButton from '../../UI/Buttons/reviewsButton'
-import CheckoutFormInput from '../../UI/input/checkoutFormInput'
-import { setUserLogin } from '../../../store/slice/auntificationSlice'
+import { AppDispatch, AppSelector } from '../../../../hooks'
+import Buttons from '../../Buttons/BuyButton'
+import ReviewsButton from '../../Buttons/ReviewsButton'
+import CheckoutFormInput from '../../Inputs/CheckoutFormInput'
+import { setUserLogin } from '../../../../store/slice/auntificationSlice'
 import './popupRegistrationLogin.Modele.scss'
 type IProps = {
 	setRegistrationOpen: React.Dispatch<React.SetStateAction<boolean>>

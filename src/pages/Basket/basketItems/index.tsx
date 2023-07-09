@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useState } from 'react'
-import CalkulatorBasket from '../../../components/calkulator/calkulatorBasket'
-import Cashback from '../../../components/UI/cashback'
+import CalkulatorBasket from '../../../components/Calkulator/calkulatorBasket'
+import Cashback from '../../../components/UI/Cashback'
 import './basketItems.Module.scss'
 import ICart from '../../../types/ICart'
 import { AppDispatch } from '../../../hooks'

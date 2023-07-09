@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react'
-import Breadcrumbs from '../../components/breadcrumbs'
+import Breadcrumbs from '../../components/UI/Breadcrumbs'
 import './DeliveryDispatch.Module.scss'
 import { deliveryDesc } from './deliveryDesc'
 const DeliveryDispatch = () => {

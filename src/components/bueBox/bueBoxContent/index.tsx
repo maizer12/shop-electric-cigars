@@ -1,14 +1,14 @@
 import React, { useState } from 'react'
-import LikeSetting from '../../UI/likeSetting'
+import LikeSetting from '../../UI/LikeSetting'
 import './bueBoxContent.Modules.scss'
 import { Rating } from 'react-simple-star-rating'
-import FilterColor from '../../filter/filterColor'
-import FilterTeg from '../../filter/filterTeg'
-import Buttons from '../../UI/Buttons/buyButton'
-import Cashback from '../../UI/cashback'
+import FilterColor from '../../Filter/filterColor'
+import FilterTeg from '../../Filter/filterTeg'
+import Buttons from '../../UI/Buttons/BuyButton'
+import Cashback from '../../UI/Cashback'
 import { AppDispatch, AppSelector } from '../../../hooks'
 import { setBasketDB } from '../../../store/slice/cartSlice'
-import CalkulatorBue from '../../calkulator/calkulatorBue'
+import CalkulatorBue from '../../Calkulator/calkulatorBue'
 type IProps = {
 	setPopupSwitch: React.Dispatch<React.SetStateAction<boolean>>
 }

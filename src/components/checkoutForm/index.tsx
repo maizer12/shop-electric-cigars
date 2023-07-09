@@ -1,5 +1,5 @@
-import CheckoutFormInput from '../UI/input/checkoutFormInput'
-import CheckoutFormSelect from '../UI/select/checkoutFormSelect'
+import CheckoutFormInput from '../UI/Inputs/CheckoutFormInput'
+import CheckoutFormSelect from '../UI/Selects/checkoutFormSelect'
 import './checkoutForm.Module.scss'
 const CheckoutForm = () => {
 	const payWay = ['Оберіть спосіб оплати', 'Готівка', 'Карткою']

@@ -1,5 +1,5 @@
 import React from 'react'
-import Breadcrumbs from '../../components/breadcrumbs'
+import Breadcrumbs from '../../components/UI/Breadcrumbs'
 import './contact.Module.scss'
 const Contact = () => {
 	const breadcrumbs = ['Головна', 'Контакти']

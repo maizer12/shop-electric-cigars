@@ -1,5 +1,5 @@
 import React from 'react'
-import Buttons from '../UI/Buttons/buyButton'
+import Buttons from '../UI/Buttons/BuyButton'
 import './yourOrder.Module.scss'
 const YourOrder = () => {
 	return (

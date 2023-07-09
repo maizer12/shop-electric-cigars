@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import BuyButton from '../../UI/Buttons/buyButton'
+import BuyButton from '../../Buttons/BuyButton'
 import './popupBue.Module.scss'
 type IProps = {
 	setPopupSwitch: React.Dispatch<React.SetStateAction<boolean>>

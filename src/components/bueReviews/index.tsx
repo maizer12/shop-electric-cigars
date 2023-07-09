@@ -2,8 +2,8 @@ import { useState } from 'react'
 import { Rating } from 'react-simple-star-rating'
 import './bueReviews.Modules.scss'
 import ReviewsItem from './reviewsItem'
-import CartItems from '../cartItems'
-import ReviewsButton from '../UI/Buttons/reviewsButton'
+import CartItems from '../Products/CartItems'
+import ReviewsButton from '../UI/Buttons/ReviewsButton'
 import CartDB from '../../services/cartItemsDB.json'
 const BueReviews = () => {
 	const [rating, setRating] = useState(0)

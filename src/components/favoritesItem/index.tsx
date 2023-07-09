@@ -1,6 +1,6 @@
 import React from 'react'
 import ICart from '../../types/ICart'
-import BuyButton from '../UI/Buttons/buyButton'
+import BuyButton from '../UI/Buttons/BuyButton'
 import './favoritesItem.Module.scss'
 import { setFavoritesDB } from '../../store/slice/favoriteSlice'
 import { AppDispatch, AppSelector } from '../../hooks'
