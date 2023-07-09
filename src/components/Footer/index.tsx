@@ -1,35 +1,9 @@
 import './footer.Module.scss'
 import FooterItem from './FooterItem'
-
 import { logo } from '../../_config'
+import { columnFooterOne, columnFooterTwo, columnFooterThree } from './const'
 
 const Footer = () => {
-	const linkVan: string[] = [
-		'Інформація про доставку',
-		'Про нас',
-		'Умови повернення',
-		"Зв'язатися з нами",
-		'Карта сайту',
-		'Виробники Акції',
-	]
-	const linkTo: string[] = [
-		'Електронні сигарети',
-		'Одноразові POD системи',
-		'Рідини для електронних сигарет',
-		'Системи нагрівання  тютюну',
-		'Комплектуючі',
-		'Обслуговування та ремонт',
-		'Самозаміс',
-	]
-	const linkFre: string[] = [
-		'Вхід',
-		'Регістрація',
-		'Закладки',
-		'Порівняння',
-		'товарів',
-		'Історія',
-		'замовлень',
-	]
 	return (
 		<footer className='footer'>
 			<ul className='footer__items'>
@@ -57,13 +31,13 @@ const Footer = () => {
 					</p>
 				</li>
 				<li className='footer-colum'>
-					<FooterItem name={'Інформація'} link={linkVan} />
+					<FooterItem name={'Інформація'} links={columnFooterOne} />
 				</li>
 				<li className='footer-colum'>
-					<FooterItem name={'Каталог'} link={linkTo} />
+					<FooterItem name={'Каталог'} links={columnFooterTwo} />
 				</li>
 				<li className='footer-colum'>
-					<FooterItem name={'Особистий кабінет'} link={linkFre} />
+					<FooterItem name={'Особистий кабінет'} links={columnFooterThree} />
 					<ul className='social'>
 						<li className='social__item'>
 							<a href='' className='social__link'>

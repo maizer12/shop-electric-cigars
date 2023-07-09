@@ -1,8 +1,6 @@
-type IHeaderMenu = {
-	name: string
-	path: string
-}
-export const headerMenu: IHeaderMenu[] = [
+import ILink from '../../types/ILink'
+
+export const headerMenu: ILink[] = [
 	{ name: 'Доставка и оплата', path: '/delivery-dispatch' },
 	{ name: 'Контакти', path: '#' },
 	{ name: 'FAQ', path: '/faq' },
@@ -28,4 +26,13 @@ export const headerButtons: IHeaderButtons[] = [
 		path: '/basket',
 		sum: 0,
 	},
+]
+export const navigationLinks: ILink[] = [
+	{ name: 'Каталог товарів', path: '/' },
+	{ name: 'Акції', path: '/catalog' },
+	{ name: 'Популярне ', path: '/catalog' },
+	{ name: 'Рod системи', path: '/catalog' },
+	{ name: 'Одноразові', path: '/catalog' },
+	{ name: 'Рідини ', path: '/catalog' },
+	{ name: 'Блог', path: '/blog' },
 ]

@@ -1,21 +1,23 @@
 import React from 'react'
+import ILink from '../../../types/ILink'
+import { Link } from 'react-router-dom'
 
 interface IProp {
-	link: string[],
-	name:string
+	links: ILink[]
+	name: string
 }
 
-const FooterItem = ({ link, name}: IProp) => {
+const FooterItem = ({ links, name }: IProp) => {
 	return (
 		<ul className='footer-items'>
 			<li className='footer-items__item'>
 				<h5 className='footer-items__name'>{name}</h5>
 			</li>
 			<li className='footer-items__item'>
-				{link.map(e => (
-					<a href='#' key={e} className='footer-items__link'>
-						{e}
-					</a>
+				{links.map(e => (
+					<Link to={e.path} key={e.name} className='footer-items__link'>
+						{e.name}
+					</Link>
 				))}
 			</li>
 		</ul>

@@ -8,6 +8,7 @@ import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import 'swiper/css/scrollbar'
 import ICart from '../../types/ICart'
+import BtnLink from '../UI/Buttons/BtnLink'
 interface IProps {
 	title?: string
 	item: ICart[]
@@ -22,7 +23,7 @@ const CartItems = ({ title, item, rowActivity }: IProps) => {
 				<div className='items-cart__header'>
 					<h3 className='items-cart__title'>{title}</h3>
 					<div className='items-cart__control'>
-						<h5 className='items-cart__desc'>Дивитися всі новинки</h5>
+						<BtnLink path='/'>Дивитися всі новинки</BtnLink>
 					</div>
 				</div>
 				<div className='items-cart__items'>

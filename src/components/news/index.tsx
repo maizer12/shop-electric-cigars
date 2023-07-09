@@ -1,7 +1,7 @@
 import React from 'react'
-import NewsItem from '../blogItem'
+import NewsItem from '../BlogItem'
 import './news.Module.scss'
-import newsData from '../../services/blogItems.json'
+import newsData from '../../services/newsItems.json'
 
 const News = () => {
 	const images: string[] = newsData.filter((e, i) => i <= 2)
